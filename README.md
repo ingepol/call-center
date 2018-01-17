@@ -1,5 +1,7 @@
 # call-center
 
+Este es el [enunciado del ejercicio](https://github.com/almundocom/ejercicio-java) 
+
 Este ejercicio consiste en un modelo de Call Center en el que hay 3 tipos de empleados: OPERADOR, SUPERVISOR y DIRECTOR.
 
 El objetivo principal es gestionar las llamadas entrantes y asignarlas a los empleados a través de un despachador.  Para asignar estas llamadas, 
@@ -19,17 +21,11 @@ Hay un par de llamadas de registro informativas que se dejan intencionalmente pa
 
 
 ## Extra/Plus
-* Dar alguna solución sobre qué pasa con una llamada cuando no hay ningún empleado libre.
-Se utiliza una lista static (incomingCalls) de llamadas entrantes de tipo ConcurrentLinkedDeque, lo cual permitirá realizar operaciones concurrentes de 
-inserción, eliminación y acceso desde varios subprocesos de manera segura.  Este tipo de lista nos permite agregar un elemento en la primera posición y 
-eliminar el primer elemento dando la garantía de ser FIFO (First In, First Out), manteniendo el orden de llegada. 
+
+* Se da solución a los puntos extras porque la atención de las llamadas es sumamente importante para dar respuesta a alguna inquietud o solución a un problema que pueda tener un cliente al otro lado de la línea.   Y por otro lado la arquitectura, el manejo de Threads y listas concurrentes permite dar solución a los puntos: 
+	* Dar alguna solución sobre qué pasa con una llamada cuando no hay ningún empleado libre. Se utiliza una lista static (incomingCalls) de llamadas entrantes de tipo ConcurrentLinkedDeque, lo cual permitirá realizar operaciones concurrentes de inserción, eliminación y acceso desde varios subprocesos de manera segura.  Este tipo de lista nos permite agregar un elemento en la primera posición y eliminar el primer elemento dando la garantía de ser FIFO (First In, First Out), manteniendo el orden de llegada. 
 Esto permite que cuando no hay empleados libres, la llamada entrante se mantiene en la lista y será atendida por el próximo empleado disponible.
-
-
-* Dar alguna solución sobre qué pasa con una llamada cuando entran más de 10 llamadas concurrentes.
-Para esta solución se utiliza dos estados indicando si un empleado está o no disponible (AVAILABLE/BUSY) para atender la llamada. Cuando hay una llamada entrante 
-y están todos los recursos tomados, es decir que los empleados están ocupados, el proceso se queda esperando hasta que uno sea liberado (Busca un empleado con 
-estado AVAILABLE, en el orden mencionado previamente OPERADOR, SUPERVISOR, DIRECTOR).
+	* Dar alguna solución sobre qué pasa con una llamada cuando entran más de 10 llamadas concurrentes. Para esta solución se utiliza dos estados indicando si un empleado está o no disponible (AVAILABLE/BUSY) para atender la llamada. Cuando hay una llamada entrante y están todos los recursos tomados, es decir que los empleados están ocupados, el proceso se queda esperando hasta que uno sea liberado (Busca un empleado con estado AVAILABLE, en el orden mencionado previamente OPERADOR, SUPERVISOR, DIRECTOR).
 
 
 
