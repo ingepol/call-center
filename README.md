@@ -36,7 +36,6 @@ estado AVAILABLE, en el orden mencionado previamente OPERADOR, SUPERVISOR, DIREC
 ## UML
 
 * Diagrama de paquetes y clases
-![alt text](https://github.com/ingepol/call-center/raw/master/uml/jpg/PackageDiagram.jpg)
 
 ![alt text](https://github.com/ingepol/call-center/raw/master/uml/jpg/ClassDiagram.jpg)
 
