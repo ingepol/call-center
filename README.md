@@ -8,7 +8,7 @@ utiliza la siguiente asignación:
 	2. SUPERVISOR
 	3. DIRECTOR
 
-## Solution
+## Solución
 
 La solución principal es utilizar Threads, tanto para cada uno de los empleados (Employee), generar llamadas (CallGenerator) y el mismo despachador (Dispatcher)
 encargado de asignar las llamadas.
@@ -35,10 +35,9 @@ estado AVAILABLE, en el orden mencionado previamente OPERADOR, SUPERVISOR, DIREC
 
 ## UML
 
-* Diagrama de paquetes
+* Diagrama de paquetes y clases
 ![alt text](https://github.com/ingepol/call-center/raw/master/uml/jpg/PackageDiagram.jpg)
 
-* Diagrama de clases
 ![alt text](https://github.com/ingepol/call-center/raw/master/uml/jpg/ClassDiagram.jpg)
 
 

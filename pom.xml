@@ -75,7 +75,7 @@
 							<archive>
 								<manifest>
 									<!-- Clase Main -->
-									<mainClass>ar.almundo.call_center.CallCenter</mainClass>
+									<mainClass>ar.almundo.callcenter.CallCenter</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
